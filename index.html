@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MST HYROX • Kinga • Block 1</title>
+<style>
+:root{--bg:#0b1020;--panel:#131a2e;--panel2:#19223b;--text:#eef3ff;--muted:#9dafd3;--line:rgba(255,255,255,.09);--accent:#7aa2ff;--ok:#27c281;--warn:#f0b429;--bad:#f06464;--radius:18px;--shadow:0 10px 30px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;text-size-adjust:100%}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at top right,rgba(122,162,255,.18),transparent 30%),radial-gradient(circle at top left,rgba(39,194,129,.08),transparent 25%),var(--bg);color:var(--text)}
+.app{max-width:1600px;margin:0 auto;padding:12px}.panel{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01)),var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:14px}.section{padding:16px}h1,h2,h3,p{margin:0}h1{font-size:30px;line-height:1.1;margin-bottom:8px}h2{font-size:18px;margin-bottom:12px}h3{font-size:15px;margin-bottom:8px}.muted{color:var(--muted)}.small{font-size:12px}.badge{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);margin-bottom:10px}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:14px;margin-bottom:14px}.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}button,input,textarea,select{font:inherit;color:var(--text);border-radius:12px;border:1px solid rgba(255,255,255,.1);background:var(--panel2)}button{padding:10px 13px;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--accent),#a0b7ff);color:#08101f;border:0;font-weight:800}.btn-soft{background:#243252}.btn-danger{background:rgba(240,100,100,.14);color:#ffd2d2}input,textarea,select{width:100%;padding:9px 10px;outline:none}textarea{min-height:76px;resize:vertical}input::placeholder,textarea::placeholder{color:rgba(157,175,211,.65)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.field{margin-bottom:12px}label{display:block;font-size:13px;color:var(--muted);margin-bottom:7px}.stat,.card,.chart-card{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:12px}.stat .value{font-size:22px;font-weight:800;margin-top:4px}.table-wrap{overflow:auto;-webkit-overflow-scrolling:touch}table{width:100%;border-collapse:collapse;min-width:1320px;font-size:12px}th,td{text-align:left;padding:8px 7px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);background:rgba(255,255,255,.025);font-weight:650;position:sticky;top:0;z-index:2}.exercise-cell{min-width:155px;width:155px;max-width:155px}.goal-cell{min-width:150px;width:150px;max-width:150px;color:var(--muted);line-height:1.35;white-space:normal}.week-col{min-width:165px;width:165px;max-width:165px}.ex-name{font-weight:800;margin-bottom:4px}.ex-rest{display:block;color:var(--muted);font-size:11px;line-height:1.25}.week-box{display:grid;gap:6px}.series-input{min-height:34px}.comment-input{min-height:38px}.group-a td{background:rgba(122,162,255,.035)}.group-b td{background:rgba(39,194,129,.03)}.group-c td{background:rgba(240,180,41,.028)}.group-d td{background:rgba(255,255,255,.018)}.day-title{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:8px}.chart-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.chart-wrap{height:230px;position:relative}canvas{width:100%;height:100%;display:block}.summary-list{display:grid;gap:8px}.summary-row{display:grid;grid-template-columns:1fr auto;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}.file-input{max-width:340px}.report-section{display:none}.note-box{padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);margin-top:10px}.history-table{min-width:900px}.footer{font-size:12px;color:var(--muted);text-align:center;padding:18px 8px}
+@media(max-width:1180px){.hero,.grid3,.grid4,.chart-grid{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){.app{padding:6px}.section{padding:10px}h1{font-size:25px}h2{font-size:16px}p,label,button,input,textarea,select,.small,.muted{font-size:12px;line-height:1.35}.toolbar button{flex:1 1 100%}table{font-size:10px;min-width:1120px}th,td{padding:6px 5px}.exercise-cell{min-width:118px;width:118px;max-width:118px}.goal-cell{min-width:118px;width:118px;max-width:118px}.week-col{min-width:145px;width:145px;max-width:145px}.week-box{gap:4px}input,textarea{padding:7px 6px;border-radius:8px}.series-input{min-height:30px}.comment-input{min-height:34px}.ex-rest{font-size:9px}.chart-wrap{height:210px}}
+@media print{body{background:#fff;color:#111}.app{display:none}.report-section{display:block;padding:20mm;font-family:Arial,sans-serif;color:#111}.report-section h1{font-size:22px;margin-bottom:10px}.report-section h2{font-size:16px;margin-top:18px;margin-bottom:8px}.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;font-size:12px}.report-box{border:1px solid #ccc;padding:8px;margin:8px 0}.report-table{width:100%;border-collapse:collapse;font-size:11px}.report-table th,.report-table td{border:1px solid #ccc;padding:5px;text-align:left;color:#111;background:#fff}.no-print{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+  <section class="hero">
+    <div class="panel section">
+      <span class="badge">Mocna Strona Treningu • HYROX Block 1</span>
+      <h1>Plan treningowy Kinga • 6 tygodni</h1>
+      <p class="muted">Cel bloku: siła + baza wydolnościowa + nauka stacji HYROX. Wpisuj wynik jako <b>60x5</b>, <b>2x16x30m</b>, <b>500m 2:20</b> albo krótki komentarz. Aplikacja zapisuje dane w przeglądarce.</p>
+      <div class="toolbar">
+        <button class="btn-primary" onclick="saveAll()">Zapisz dane</button>
+        <button class="btn-soft" onclick="exportJSON()">Eksport JSON</button>
+        <label class="btn-soft" style="display:inline-flex;align-items:center;gap:8px;cursor:pointer;margin:0">Import JSON<input id="importFile" type="file" accept="application/json" style="display:none" onchange="importJSON(event)"></label>
+        <button class="btn-soft" onclick="renderCharts()">Odśwież wykresy</button>
+        <button class="btn-danger" onclick="clearAll()">Wyczyść dane</button>
+      </div>
+      <p id="saveStatus" class="footer-note small muted" style="margin-top:10px">Dane zapisują się lokalnie na tym urządzeniu.</p>
+    </div>
+    <div class="panel section">
+      <h2>Dane planu</h2>
+      <div class="field"><label>Imię</label><input id="athleteName" data-save="profile" placeholder="Kinga"></div>
+      <div class="field"><label>Start</label><input id="raceDate" data-save="profile" placeholder="HYROX Poznań, 20 listopada"></div>
+      <div class="field"><label>Uwagi trenera</label><textarea id="coachNotes" data-save="profile" placeholder="Priorytet: technika, progres siły, spokojne dokładanie objętości."></textarea></div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <div class="grid4">
+      <div class="stat"><div class="muted small">Tygodnie</div><div class="value">6</div></div>
+      <div class="stat"><div class="muted small">Treningi</div><div class="value">3</div></div>
+      <div class="stat"><div class="muted small">Czas</div><div class="value">60–70 min</div></div>
+      <div class="stat"><div class="muted small">Układ</div><div class="value">10 dni</div></div>
+    </div>
+  </section>
+
+  <div id="trainingTables"></div>
+
+  <section class="panel section">
+    <h2>Pomiary i raport dla trenera</h2>
+    <div class="grid4">
+      <div class="field"><label>Data raportu</label><input id="reportDate" data-save="report" type="date"></div>
+      <div class="field"><label>Średnia waga</label><input id="bodyWeight" data-save="report" placeholder="np. 68,4 kg"></div>
+      <div class="field"><label>Średnie kcal</label><input id="avgKcal" data-save="report" placeholder="np. 2100 kcal"></div>
+      <div class="field"><label>Treningi wykonane</label><input id="trainingDone" data-save="report" placeholder="np. 2/3"></div>
+    </div>
+    <div class="grid4">
+      <div class="field"><label>Pas</label><input id="waist" data-save="report" placeholder="cm"></div>
+      <div class="field"><label>Biodra</label><input id="hips" data-save="report" placeholder="cm"></div>
+      <div class="field"><label>Udo</label><input id="thigh" data-save="report" placeholder="cm"></div>
+      <div class="field"><label>Klatka</label><input id="chest" data-save="report" placeholder="cm"></div>
+      <div class="field"><label>Biceps</label><input id="biceps" data-save="report" placeholder="cm"></div>
+      <div class="field"><label>Łydka</label><input id="calf" data-save="report" placeholder="cm"></div>
+      <div class="field"><label>Sen</label><input id="sleep" data-save="report" placeholder="np. 7 h"></div>
+      <div class="field"><label>Kroki</label><input id="steps" data-save="report" placeholder="np. 9500"></div>
+    </div>
+    <div class="grid3">
+      <div class="field"><label>Energia 1–10</label><input id="energy" data-save="report" placeholder="np. 7"></div>
+      <div class="field"><label>Głód 1–10</label><input id="hunger" data-save="report" placeholder="np. 4"></div>
+      <div class="field"><label>Stres 1–10</label><input id="stress" data-save="report" placeholder="np. 5"></div>
+    </div>
+    <div class="field"><label>Uwagi do tygodnia</label><textarea id="weeklyNotes" data-save="report" placeholder="Samopoczucie, ból, regeneracja, uwagi do treningów."></textarea></div>
+    <div class="toolbar">
+      <button class="btn-primary" onclick="prepareReport(); window.print();">Generuj raport PDF</button>
+      <button class="btn-soft" onclick="saveReportSnapshot()">Zapisz raport w historii</button>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <h2>Wykresy progresu</h2>
+    <p class="muted small" style="margin-bottom:12px">Wykresy czytają wpisy typu <b>60x5</b>. Liczą najlepszy ciężar, szacowane 1RM i objętość z wpisów siłowych.</p>
+    <div class="chart-grid">
+      <div class="chart-card"><h3>Najlepszy ciężar</h3><div class="chart-wrap"><canvas id="chartWeight"></canvas></div></div>
+      <div class="chart-card"><h3>Szacowane 1RM</h3><div class="chart-wrap"><canvas id="chartOneRM"></canvas></div></div>
+      <div class="chart-card"><h3>Objętość</h3><div class="chart-wrap"><canvas id="chartVolume"></canvas></div></div>
+    </div>
+  </section>
+
+  <section class="panel section">
+    <h2>Historia raportów</h2>
+    <div class="table-wrap"><table class="history-table"><thead><tr><th>Data</th><th>Waga</th><th>Pas</th><th>Treningi</th><th>Sen</th><th>Kroki</th><th>Uwagi</th></tr></thead><tbody id="reportHistoryBody"></tbody></table></div>
+  </section>
+  <div class="footer">© Mocna Strona Treningu • MST HYROX App v2.0</div>
+</div>
+
+<div class="report-section" id="printReport"></div>
+
+<script>
+const APP_KEY = 'mst_hyrox_kinga_block1_v2';
+const WEEKS = 6;
+const plan = [
+  {day:'Dzień 1', note:'Siła + sled + krótki blok kondycyjny', exercises:[
+    {id:'d1_squat', block:'A1', name:'Przysiad ze sztangą', goal:'3×4–6\nRIR 2/2/1\nPrzerwa po A1+A2: 90–120 s', sets:3, ph:['50x5','52,5x5','55x4'], group:'a', track:true},
+    {id:'d1_pullup', block:'A2', name:'Podciąganie (guma / maszyna)', goal:'3×4–6\nRIR 2/2/1\nPrzerwa po A1+A2: 90–120 s', sets:3, ph:['guma x5','guma x5','guma x4'], group:'a'},
+    {id:'d1_sled_push', block:'B1', name:'Sled Push', goal:'3×20 m\nTechnicznie, równo\nPrzerwa po B1+B2: 90 s', sets:3, ph:['40kg x20m','40kg x20m','40kg x20m'], group:'b'},
+    {id:'d1_sled_pull', block:'B2', name:'Sled Pull', goal:'3×20 m\nTechnicznie, równo\nPrzerwa po B1+B2: 90 s', sets:3, ph:['40kg x20m','40kg x20m','40kg x20m'], group:'b'},
+    {id:'d1_lunges', block:'C1', name:'Walking Lunges', goal:'3×20+20\nBez pośpiechu\nPrzerwa po rundzie: 90 s', sets:3, ph:['20+20','20+20','20+20'], group:'c'},
+    {id:'d1_wallball', block:'C2', name:'Wall Ball', goal:'3×12–15\nRytm i technika\nPrzerwa po rundzie: 90 s', sets:3, ph:['12','12','12'], group:'c'},
+    {id:'d1_burpee', block:'C3', name:'Burpee Broad Jump', goal:'3×8–10\nJakość ruchu\nPrzerwa po rundzie: 90 s', sets:3, ph:['8','8','8'], group:'c'}
+  ]},
+  {day:'Dzień 2', note:'Push press + row + farmer + ski/bieg', exercises:[
+    {id:'d2_pushpress', block:'A', name:'Push Press', goal:'3×4–6\nRIR 2/2/1\nPrzerwa 90–120 s', sets:3, ph:['20x5','22,5x5','25x4'], group:'a', track:true},
+    {id:'d2_rowerg', block:'B', name:'Row Erg', goal:'3×500 m\nRówno, bez palenia\nPrzerwa 90 s', sets:3, ph:['500m czas','500m czas','500m czas'], group:'b'},
+    {id:'d2_farmer', block:'C', name:'Farmer Carry', goal:'3×30 m\nChwyt + core\nPrzerwa 60–90 s', sets:3, ph:['2x16kg x30m','2x16kg x30m','2x16kg x30m'], group:'c'},
+    {id:'d2_ski', block:'D1', name:'Ski Erg', goal:'3×400 m\nPołącz z biegiem\nPrzerwa po D1+D2: 90 s', sets:3, ph:['400m czas','400m czas','400m czas'], group:'d'},
+    {id:'d2_run', block:'D2', name:'Bieg na bieżni', goal:'3×300 m\nPołącz ze Ski Erg\nPrzerwa po D1+D2: 90 s', sets:3, ph:['300m tempo','300m tempo','300m tempo'], group:'d'},
+    {id:'d2_straight', block:'E', name:'Straight Arm Pulldown', goal:'2×12–15\nRIR 2/1\nPrzerwa 60 s', sets:2, ph:['seria 1','seria 2'], group:'a'}
+  ]},
+  {day:'Dzień 3', note:'Hinge + bench + kondycja stacyjna', exercises:[
+    {id:'d3_rdl', block:'A1', name:'RDL sztangą', goal:'3×5–6\nRIR 2/2/1\nPrzerwa po A1+A2: 90–120 s', sets:3, ph:['50x5','52,5x5','55x5'], group:'a', track:true},
+    {id:'d3_bench', block:'A2', name:'Wyciskanie sztangi leżąc 15°', goal:'3×5–6\nRIR 2/2/1\nPrzerwa po A1+A2: 90–120 s', sets:3, ph:['30x5','32,5x5','35x4'], group:'a', track:true},
+    {id:'d3_rowerg', block:'B', name:'Row Erg', goal:'3×250 m\nRówno, technicznie\nPrzerwa 60 s', sets:3, ph:['250m czas','250m czas','250m czas'], group:'b'},
+    {id:'d3_ski', block:'C', name:'Ski Erg', goal:'3×250 m\nRówno, technicznie\nPrzerwa 60 s', sets:3, ph:['250m czas','250m czas','250m czas'], group:'b'},
+    {id:'d3_lunges', block:'D1', name:'Walking Lunges', goal:'3×20+20\nPrzerwa po D1+D2: 60–90 s', sets:3, ph:['20+20','20+20','20+20'], group:'c'},
+    {id:'d3_wallball', block:'D2', name:'Wall Ball', goal:'3×12–15\nPrzerwa po D1+D2: 60–90 s', sets:3, ph:['12','12','12'], group:'c'}
+  ]}
+];
+let state = {profile:{}, report:{}, inputs:{}, history:[]};
+function esc(s){return String(s ?? '').replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function keyFor(exId,w,type,i){return `${exId}__w${w}__${type}${i!==undefined?'__'+i:''}`}
+function makeWeekCell(ex,w){let html='<div class="week-box">';for(let i=0;i<ex.sets;i++){const k=keyFor(ex.id,w,'set',i);html += `<input class="series-input" data-key="${k}" placeholder="${esc(ex.ph?.[i]||'seria '+(i+1))}" oninput="markDirty()">`;}const ck=keyFor(ex.id,w,'comment');html += `<textarea class="comment-input" data-key="${ck}" placeholder="krótki komentarz" oninput="markDirty()"></textarea></div>`;return html;}
+function renderTables(){const root=document.getElementById('trainingTables');root.innerHTML=plan.map(day=>`<section class="panel section"><div class="day-title"><div><h2>${day.day}</h2><p class="muted small">${day.note}</p></div></div><div class="table-wrap"><table><thead><tr><th class="exercise-cell">Ćwiczenie</th><th class="goal-cell">Cel i zakres</th>${Array.from({length:WEEKS},(_,i)=>`<th class="week-col">Tydzień ${i+1}</th>`).join('')}</tr></thead><tbody>${day.exercises.map(ex=>`<tr class="group-${ex.group}"><td class="exercise-cell"><div class="ex-name">${ex.block} ${ex.name}</div></td><td class="goal-cell">${esc(ex.goal).replace(/\n/g,'<br>')}</td>${Array.from({length:WEEKS},(_,i)=>`<td class="week-col">${makeWeekCell(ex,i+1)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></section>`).join('');}
+function loadAll(){try{const raw=localStorage.getItem(APP_KEY);if(raw) state=JSON.parse(raw);}catch(e){console.warn(e)}document.querySelectorAll('[data-save]').forEach(el=>{const group=el.dataset.save; if(state[group] && state[group][el.id]!==undefined) el.value=state[group][el.id];});document.querySelectorAll('[data-key]').forEach(el=>{if(state.inputs[el.dataset.key]!==undefined) el.value=state.inputs[el.dataset.key];});renderHistory();renderCharts();}
+function collect(){document.querySelectorAll('[data-save]').forEach(el=>{const g=el.dataset.save; state[g]=state[g]||{}; state[g][el.id]=el.value;});document.querySelectorAll('[data-key]').forEach(el=>{state.inputs[el.dataset.key]=el.value;});}
+function saveAll(){collect();localStorage.setItem(APP_KEY,JSON.stringify(state));const s=document.getElementById('saveStatus');s.textContent='Zapisano: '+new Date().toLocaleString('pl-PL');renderCharts();}
+let t=null;function markDirty(){clearTimeout(t);t=setTimeout(saveAll,550)}
+function clearAll(){if(!confirm('Wyczyścić wszystkie dane z tego urządzenia?'))return;localStorage.removeItem(APP_KEY);location.reload();}
+function exportJSON(){saveAll();const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='kinga_hyrox_block1_dane.json';a.click();URL.revokeObjectURL(url);}
+function importJSON(e){const file=e.target.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{try{state=JSON.parse(r.result);localStorage.setItem(APP_KEY,JSON.stringify(state));location.reload();}catch(err){alert('Nie udało się wczytać pliku JSON.')}};r.readAsText(file);}
+function parseSet(v){if(!v)return null;let s=String(v).toLowerCase().replace(',', '.').replace(/\s+/g,'');let m=s.match(/^(\d+(?:\.\d+)?)x(\d+)$/);if(m)return {kg:parseFloat(m[1]), reps:parseInt(m[2]), volume:parseFloat(m[1])*parseInt(m[2]), oneRM:parseFloat(m[1])*(1+parseInt(m[2])/30)};m=s.match(/^(\d+)x(\d+(?:\.\d+)?)kg/);if(m)return {kg:parseFloat(m[2]), reps:parseInt(m[1]), volume:parseFloat(m[2])*parseInt(m[1]), oneRM:parseFloat(m[2])*(1+parseInt(m[1])/30)};return null;}
+function exerciseStats(exId){let weeks=[];for(let w=1;w<=WEEKS;w++){let best=0,one=0,vol=0;for(let i=0;i<4;i++){const p=parseSet(state.inputs[keyFor(exId,w,'set',i)]);if(p){best=Math.max(best,p.kg);one=Math.max(one,p.oneRM);vol+=p.volume;}}weeks.push({best,one,vol});}return weeks;}
+function drawLine(canvasId, datasets, metric){const c=document.getElementById(canvasId);if(!c)return;const ctx=c.getContext('2d');const dpr=window.devicePixelRatio||1;const rect=c.getBoundingClientRect();c.width=rect.width*dpr;c.height=rect.height*dpr;ctx.scale(dpr,dpr);ctx.clearRect(0,0,rect.width,rect.height);const pad={l:38,r:12,t:16,b:28};const W=rect.width-pad.l-pad.r,H=rect.height-pad.t-pad.b;ctx.strokeStyle='rgba(255,255,255,.12)';ctx.lineWidth=1;for(let i=0;i<5;i++){const y=pad.t+H*i/4;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+W,y);ctx.stroke();}let max=0;datasets.forEach(ds=>ds.values.forEach(v=>max=Math.max(max,v)));max=max||1;const colors=['#7aa2ff','#27c281','#f0b429','#f06464'];datasets.forEach((ds,di)=>{ctx.strokeStyle=colors[di%colors.length];ctx.fillStyle=colors[di%colors.length];ctx.lineWidth=2;ctx.beginPath();ds.values.forEach((v,i)=>{const x=pad.l+(W*(i/(WEEKS-1)));const y=pad.t+H-(v/max)*H;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();ds.values.forEach((v,i)=>{if(v<=0)return;const x=pad.l+(W*(i/(WEEKS-1)));const y=pad.t+H-(v/max)*H;ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);ctx.fill();});});ctx.fillStyle='rgba(238,243,255,.78)';ctx.font='11px system-ui';for(let i=0;i<WEEKS;i++){const x=pad.l+(W*(i/(WEEKS-1)));ctx.fillText('T'+(i+1),x-8,pad.t+H+20);}let lx=pad.l,ly=12;datasets.forEach((ds,di)=>{ctx.fillStyle=colors[di%colors.length];ctx.fillRect(lx,ly-8,8,8);ctx.fillStyle='rgba(238,243,255,.82)';ctx.fillText(ds.name,lx+12,ly);lx+=ctx.measureText(ds.name).width+35;});}
+function renderCharts(){collect();const tracked=[];plan.forEach(d=>d.exercises.forEach(ex=>{if(ex.track)tracked.push({id:ex.id,name:ex.name})}));const datasetsWeight=tracked.map(t=>({name:t.name,values:exerciseStats(t.id).map(x=>Math.round(x.best*10)/10)}));const datasetsOne=tracked.map(t=>({name:t.name,values:exerciseStats(t.id).map(x=>Math.round(x.one*10)/10)}));const datasetsVol=tracked.map(t=>({name:t.name,values:exerciseStats(t.id).map(x=>Math.round(x.vol))}));drawLine('chartWeight',datasetsWeight,'best');drawLine('chartOneRM',datasetsOne,'one');drawLine('chartVolume',datasetsVol,'vol');}
+function reportData(){collect();return {...state.profile,...state.report};}
+function prepareReport(){saveAll();const r=reportData();const rows=[['Imię',r.athleteName||'Kinga'],['Start',r.raceDate||'HYROX Poznań, 20 listopada'],['Data raportu',r.reportDate||new Date().toISOString().slice(0,10)],['Średnia waga',r.bodyWeight],['Średnie kcal',r.avgKcal],['Treningi wykonane',r.trainingDone],['Pas',r.waist],['Biodra',r.hips],['Udo',r.thigh],['Klatka',r.chest],['Biceps',r.biceps],['Łydka',r.calf],['Sen',r.sleep],['Kroki',r.steps],['Energia',r.energy],['Głód',r.hunger],['Stres',r.stress]];
+let html=`<h1>Raport tygodniowy • ${esc(r.athleteName||'Kinga')}</h1><div class="report-box"><div class="report-grid">${rows.map(([a,b])=>`<div><b>${esc(a)}:</b> ${esc(b||'')}</div>`).join('')}</div></div><h2>Uwagi</h2><div class="report-box">${esc(r.weeklyNotes||'').replace(/\n/g,'<br>')}</div><h2>Uwagi trenera / cel bloku</h2><div class="report-box">${esc(r.coachNotes||'').replace(/\n/g,'<br>')}</div>`;
+html+=`<h2>Wybrane wyniki treningowe</h2><table class="report-table"><thead><tr><th>Ćwiczenie</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th></tr></thead><tbody>`;
+plan.forEach(d=>d.exercises.forEach(ex=>{html+=`<tr><td>${esc(d.day+' • '+ex.name)}</td>`;for(let w=1;w<=WEEKS;w++){let vals=[];for(let i=0;i<ex.sets;i++){const v=state.inputs[keyFor(ex.id,w,'set',i)];if(v)vals.push(v)}html+=`<td>${esc(vals.join(' / '))}</td>`;}html+='</tr>';}));html+='</tbody></table>';
+document.getElementById('printReport').innerHTML=html;}
+function saveReportSnapshot(){saveAll();const r=reportData();state.history=state.history||[];state.history.unshift({date:r.reportDate||new Date().toISOString().slice(0,10),weight:r.bodyWeight||'',waist:r.waist||'',training:r.trainingDone||'',sleep:r.sleep||'',steps:r.steps||'',notes:r.weeklyNotes||''});state.history=state.history.slice(0,30);localStorage.setItem(APP_KEY,JSON.stringify(state));renderHistory();}
+function renderHistory(){const body=document.getElementById('reportHistoryBody');if(!body)return;const h=state.history||[];body.innerHTML=h.length?h.map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.weight)}</td><td>${esc(x.waist)}</td><td>${esc(x.training)}</td><td>${esc(x.sleep)}</td><td>${esc(x.steps)}</td><td>${esc(x.notes)}</td></tr>`).join(''):`<tr><td colspan="7" class="muted">Brak zapisanych raportów.</td></tr>`;}
+window.addEventListener('resize',()=>setTimeout(renderCharts,100));
+renderTables();loadAll();
+if(!document.getElementById('reportDate').value){document.getElementById('reportDate').value=new Date().toISOString().slice(0,10)}
+</script>
+</body>
+</html>
